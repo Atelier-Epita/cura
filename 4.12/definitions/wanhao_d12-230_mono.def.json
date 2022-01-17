@@ -1,0 +1,44 @@
+{
+    "version": 2,
+    "name": "Wanhao Duplicator 12 230 mono",
+    "inherits": "wanhao_base",
+    "metadata": {
+        "visible": true,
+        "quality_definition": "wanhao_base",
+        "author": "Wanhao France",
+        "manufacturer": "Wanhao France",
+        "file_formats": "text/x-gcode",
+        "platform": "D12-230.stl",
+        "platform_offset": [ 0, 0, 0]
+
+    },
+
+    "overrides": {
+        "machine_name": { "default_value": "Wanhao Duplicator 12 230 mono" },
+        "machine_width": {
+            "default_value": 230
+        },
+        "machine_depth": {
+            "default_value": 230
+        },
+        "machine_height": {
+            "default_value": 250
+        },
+
+		"machine_extruders_share_heater":{
+            "default_value": true
+        },
+
+        "machine_gcode_flavor": { "default_value": "RepRap (Marlin/Sprinter)" },
+        "machine_start_gcode": {
+             "default_value": "G92 E0 ; Reset Extruder\nG28 ; Home all axes\nG1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed\nG1 X0.1 Y20 Z0.3 F5000.0 ; Move to start position\nG1 X0.1 Y200.0 Z0.3 F1500.0 E15 ; Draw the first line\nG1 X0.4 Y200.0 Z0.3 F5000.0 ; Move to side a little\nG1 X0.4 Y20 Z0.3 F1500.0 E30 ; Draw the second line\nG92 E0 ; Reset Extruder\nG1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed\nG1 X5 Y20 Z0.3 F5000.0 ; Move over to\n"
+        },
+        "machine_end_gcode": {
+            "default_value": "M104 T0 S0\nM104 T1 S0\nM140 S0\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\nM84"
+        },
+        "machine_extruder_count": {
+            "default_value": 1
+        }
+
+    }
+}

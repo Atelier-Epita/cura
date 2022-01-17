@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Generic PLA 1.75mm profile. The data in this file may not be correct for your specific machine.
+-->
+<fdmmaterial xmlns="http://www.ultimaker.com/material" version="1.3">
+    <metadata>
+        <name>
+            <brand>wanhao</brand>
+            <material>TPU 64D</material>
+            <color>Generic</color>
+        </name>
+        <GUID>0ff92885-617b-4144-a03c-9989872454bc</GUID>
+        <version>7</version>
+        <color_code>#000000</color_code>
+        <description>Le filament TPU (Polyuréthane Thermoplastique) est un filament permettant des créer des impressions 3D flexibles et déformables. C’est un filament qui est résistant aux graisses, huiles et à l’abrasion.Le TPU Premium Wanhao est beaucoup plus résistant que les TPU classiques avec une adhésion inter-couche très importante, limitant au maximum leur séparation (déchirement/décollement).</description>
+        <adhesion_info>Ne necessite pas de plateau chauffant.</adhesion_info>
+        <instruction_link>https://www.wanhaofrance.com/collections/filaments-tpu-wanhao-premium</instruction_link>
+    </metadata>
+    <properties>
+        <density>1.15</density>
+        <diameter>1.75</diameter>
+        <weight>500</weight>
+    </properties>
+    <settings>
+
+            <setting key="print cooling">50</setting>
+            <setting key="flow">100</setting>
+            <setting key="print temperature">220</setting>
+            <setting key="heated bed temperature">0</setting>
+            <setting key="retraction amount">1</setting>
+            <setting key="retraction speed">10</setting>
+
+    </settings>
+</fdmmaterial>
