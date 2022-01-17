@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css" rel="stylesheet" />
+    <link rel="stylesheet alternate"
+        href="https://cdn.jsdelivr.net/gh/primer/github-syntax-light@master/lib/github-light.css" id="light-hl">
+    <link rel="stylesheet alternate"
+        href="https://cdn.jsdelivr.net/gh/primer/github-syntax-dark@master/lib/github-dark.css" id="dark-hl">
+
+    <link rel="stylesheet" href="/highlight/styles/github-dark-dimmed.min.css">
+    <script src="/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>fiche_machine_wanahoo.md</title>
+
+    <style>
+        .notecard 
+        {
+            border-left: 6px solid #ffffff;
+            margin: 0 0 24px;
+            padding: 12px;
+            padding-bottom: 1px;
+            color: #1b1b1b;
+            font-weight: 600;
+        }
+        
+        .warning
+        {
+            background-color: #fbec74;
+            border-color: #cbbd30;
+        }
+        
+        .error
+        {
+            background-color: #fb7474;
+            border-color: #cb3030;
+        }
+        
+        .info
+        {
+            background-color: #74bafb;
+            border-color: #3092cb;
+        }
+        
+        .example
+        {
+            background-color: #8afb74;
+            border-color: #30cb3d;
+        }
+        
+        .btn
+        {
+            top: 10px;
+        }
+    </style>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+
+        </script>
+</head>
+
+<body id="markdown-body" data-color-mode="dark" data-dark-theme="dark">
+    <div id="content">
+        <div class="px-5 pb-5">
+            <div class="d-flex flex-column flex-sm-row-reverse">
+                <div>
+                    <button id="theme-button" class="btn" type="button">
+                        <span id="theme-icon" class="iconify" data-icon="octicon:moon-16"></span>
+                    </button>
+                </div>
+            </div>
+            <article class="markdown-body entry-content container-lg" itemprop="text">
+
+                <h1>General</h1>
+<div class="notecard info"><p>Duplicator d12 230<br>Using CURA 4.12</p></div>
+<h1>Info</h1>
+<div class="notecard warning"><p>Build volume: 230 x 230 x 250 mm<br>Feeder system: Bowden<br>Nozzle size: 0.4 mm<br>Max. hot end temperature: 260 ℃<br>Max. heated bed temperature: 105 ℃<br>Print bed material: Removable Magnetic<br>Frame: Aluminum<br>Bed leveling: Manual<br>Connectivity: WiFi, micro-SD card<br>Print recovery: Yes<br>Filament sensor: Yes<br>Camera: No<br>Filament: 1.75</p></div>
+<h1>Usage</h1>
+<pre><code class="language-sh">cd ~/.local/share
+rm -rf cura
+git clone https://github.com/Atelier-Epita/cura
+cd
+mkdir Application
+curl https://github.com/Ultimaker/Cura/releases/download/4.12.0/Ultimaker_Cura-4.12.0.AppImage
+chmod +x Ultimaker_Cura-4.12.0.AppImage</code></pre>
+Get a file from thingiverse in <code>.stl</code><br>
+Start the Ultimaker_Cura application<br>
+Slice the file in Cura<br>
+Mount the usb<br>
+<br>
+<details><summary>Example to mount (click me)</summary><br>
+Get the device<br>
+<pre><code class="language-sh">sudo fdisk -l</code></pre>
+Let's imagine the device is <code>/dev/sda1</code><br>
+Mount it<br>
+<pre><code class="language-sh">sudo mount /dev/sda1 /mnt</code></pre>
+Copy the file<br>
+<pre><code class="language-sh">sudo cp my/path/to/gcode/example.gcode /mnt</code></pre>
+Unmount<br>
+<pre><code class="language-sh">sudo fusermount -u -z /mnt</code></pre>
+</details><br>
+Start the printer<br>
+Plug the micro-sd<br>
+Impression>example.gcode<br>
+<b>Done !</b><br>
+
+            </article>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/calganaygun/MDcat@main/theme.js"></script>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+</body>
